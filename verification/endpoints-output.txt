@@ -1,0 +1,63 @@
+$ curl -s -i "http://localhost:8080/api/hello?name=IITU"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 105
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"message":"Hello, IITU!","owner":"Karimbayev Makzhan, IS-2502","timestamp":"2026-09-10T18:24:29.419826"}
+---
+
+$ curl -s -i "http://localhost:8080/api/hello"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 106
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"message":"Hello, world!","owner":"Karimbayev Makzhan, IS-2502","timestamp":"2026-09-10T18:24:29.427233"}
+---
+
+$ curl -s -i "http://localhost:8080/api/info"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 76
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"owner":"Karimbayev Makzhan, IS-2502","javaVersion":"25.0.3","cpuCores":10}
+---
+
+$ curl -s -i "http://localhost:8080/api/none"
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"timestamp":"2026-09-10T13:24:29.441Z","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/none for request '/api/none'.\n\tat org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)\n\tat org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\n","message":"No static resource api/none.","path":"/api/none"}
+---
+
+$ curl -s -i "http://localhost:8080/api/sum?a=5&b=3"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 49
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"a":5,"b":3,"sum":8,"difference":2,"product":15}
+---
+
+$ curl -s -i "http://localhost:8080/api/sum?a=-4&b=10"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 54
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"a":-4,"b":10,"sum":6,"difference":-14,"product":-40}
+---
+
+$ curl -s -i "http://localhost:8080/api/sum"
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 48
+Date: Thu, 10 Sep 2026 13:24:29 GMT
+
+{"a":0,"b":0,"sum":0,"difference":0,"product":0}
+---
+

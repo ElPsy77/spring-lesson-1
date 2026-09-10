@@ -1,0 +1,17 @@
+$ java -version
+openjdk version "25.0.3" 2026-04-21 LTS
+OpenJDK Runtime Environment (build 25.0.3+11-LTS)
+OpenJDK 64-Bit Server VM (build 25.0.3+11-LTS, mixed mode, sharing)
+
+$ javac -version
+javac 25.0.3
+
+$ git --version
+git version 2.50.1 (Apple Git-155)
+
+$ mvn -version
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /opt/homebrew/Cellar/maven/3.9.16/libexec
+Java version: 25.0.3, vendor: BellSoft, runtime: /Library/Java/JavaVirtualMachines/liberica-jdk-25.jdk/Contents/Home
+Default locale: ru_KZ, platform encoding: UTF-8
+OS name: "mac os x", version: "26.3.1", arch: "aarch64", family: "mac"
